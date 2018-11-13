@@ -8,6 +8,7 @@ RUN   apk update \
  adduser -D -h $PAYARA_PATH payara && echo payara:payara | chpasswd && \
  chown -R payara:payara /opt
 
+RUN wget --quiet -O ${PAYARA_PATH}/payara-micro.jar https://github.com/MeroRai/Docker-Image/blob/master/payara-micro-5.184.jar?raw=true
 RUN wget --quiet -O ${PAYARA_PATH}/rest-jcache.war https://github.com/MeroRai/payara-hazelcast-kubernetes/blob/master/rest-jcache.war?raw=true
 
 # Default payara ports to expose
